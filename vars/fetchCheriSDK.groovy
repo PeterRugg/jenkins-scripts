@@ -68,7 +68,7 @@ def call(Map args) {
     // stage("Setup SDK for ${params.target} (${params.cpu})") {
     if (true) {
         // now copy all the artifacts
-        def llvmJob = "CLANG-LLVM-${params.buildOS}/${params.llvmBranch}"
+        def llvmJob = "CLANG-LLVM-${params.buildOS}-noscev/disable-scev"
         String llvmArtifact = 'cheri-clang-llvm.tar.xz'
         String compilerType = 'cheri-llvm'
         if (params.cpu.startsWith("morello")) {
