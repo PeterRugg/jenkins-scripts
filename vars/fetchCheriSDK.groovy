@@ -76,7 +76,7 @@ def call(Map args) {
             llvmArtifact = 'morello-clang-llvm.tar.xz'
             compilerType = 'morello-llvm'
         }
-        copyArtifacts projectName: llvmJob, flatten: true, optional: false, filter: llvmArtifact, selector: lastSuccessful()
+        copyArtifacts projectName: llvmJob, flatten: true, optional: false, filter: llvmArtifact, selector: lastCompleted()
         // Rename the archive to the expected name
         // FIXME: add cheribuild argument to allow overriding this
         def extraArgs = ["--compiler-archive=${llvmArtifact}", "--compiler-type=${compilerType}"]
